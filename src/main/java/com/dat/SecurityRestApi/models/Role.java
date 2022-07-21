@@ -1,4 +1,4 @@
-package com.djamware.SecurityRest.models;
+package com.dat.SecurityRestApi.models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;

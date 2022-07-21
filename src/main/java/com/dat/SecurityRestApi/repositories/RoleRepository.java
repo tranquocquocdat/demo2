@@ -1,8 +1,7 @@
-package com.djamware.SecurityRest.repositories;
+package com.dat.SecurityRestApi.repositories;
 
+import com.dat.SecurityRestApi.models.Role;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
-import com.djamware.SecurityRest.models.Role;
 
 public interface RoleRepository extends MongoRepository<Role, String> {
 

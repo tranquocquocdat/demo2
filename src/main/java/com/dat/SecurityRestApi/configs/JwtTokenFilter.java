@@ -1,4 +1,4 @@
-package com.djamware.SecurityRest.configs;
+package com.dat.SecurityRestApi.configs;
 
 import java.io.IOException;
 
@@ -25,7 +25,7 @@ public class JwtTokenFilter extends GenericFilterBean {
         throws IOException, ServletException {
         String token = jwtTokenProvider.resolveToken((HttpServletRequest) req);
         if (token != null && jwtTokenProvider.validateToken(token)) {
-            Authentication auth = token != null ? jwtTokenProvider.getAuthentication(token) : null;
+            Authentication auth = jwtTokenProvider.getAuthentication(token);
             SecurityContextHolder.getContext().setAuthentication(auth);
         }
         filterChain.doFilter(req, res);

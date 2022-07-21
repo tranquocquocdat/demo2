@@ -1,4 +1,4 @@
-package com.djamware.SecurityRest.controllers;
+package com.dat.SecurityRestApi.controllers;
 
 public class AuthBody {
 

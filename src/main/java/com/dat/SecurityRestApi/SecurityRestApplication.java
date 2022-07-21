@@ -1,12 +1,11 @@
-package com.djamware.SecurityRest;
+package com.dat.SecurityRestApi;
 
+import com.dat.SecurityRestApi.models.Role;
+import com.dat.SecurityRestApi.repositories.RoleRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import com.djamware.SecurityRest.models.Role;
-import com.djamware.SecurityRest.repositories.RoleRepository;
 
 @SpringBootApplication
 public class SecurityRestApplication {

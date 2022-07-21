@@ -1,11 +1,14 @@
-package com.djamware.SecurityRest.services;
+package com.dat.SecurityRestApi.services;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.dat.SecurityRestApi.models.Role;
+import com.dat.SecurityRestApi.models.User;
+import com.dat.SecurityRestApi.repositories.RoleRepository;
+import com.dat.SecurityRestApi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,11 +17,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import com.djamware.SecurityRest.models.Role;
-import com.djamware.SecurityRest.models.User;
-import com.djamware.SecurityRest.repositories.RoleRepository;
-import com.djamware.SecurityRest.repositories.UserRepository;
 
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
@@ -39,8 +37,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 	public void saveUser(User user) {
 	    user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
 	    user.setEnabled(true);
-	    Role userRole = roleRepository.findByRole("ADMIN");
-	    user.setRoles(new HashSet<>(Arrays.asList(userRole)));
+//	    Role userRole = roleRepository.findByRole("ADMIN");
+//	    user.setRoles(new HashSet<>(Arrays.asList(userRole)));
 	    userRepository.save(user);
 	}
 	

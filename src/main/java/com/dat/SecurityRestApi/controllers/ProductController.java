@@ -1,4 +1,4 @@
-package com.djamware.SecurityRest.controllers;
+package com.dat.SecurityRestApi.controllers;
 
 import java.util.Optional;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.djamware.SecurityRest.models.Product;
-import com.djamware.SecurityRest.repositories.ProductRepository;
+import com.dat.SecurityRestApi.models.Product;
+import com.dat.SecurityRestApi.repositories.ProductRepository;
 
 @RestController
 public class ProductController {
@@ -40,12 +40,12 @@ public class ProductController {
     	Optional<Product> prod = productRepository.findById(id);
         if(product.getProdName() != null)
             prod.get().setProdName(product.getProdName());
-        if(product.getProdDesc() != null)
-            prod.get().setProdDesc(product.getProdDesc());
-        if(product.getProdPrice() != null)
-            prod.get().setProdPrice(product.getProdPrice());
-        if(product.getProdImage() != null)
-            prod.get().setProdImage(product.getProdImage());
+//        if(product.getProdDesc() != null)
+//            prod.get().setProdDesc(product.getProdDesc());
+//        if(product.getProdPrice() != null)
+//            prod.get().setProdPrice(product.getProdPrice());
+//        if(product.getProdImage() != null)
+//            prod.get().setProdImage(product.getProdImage());
         productRepository.save(prod.get());
         return prod.get();
     }

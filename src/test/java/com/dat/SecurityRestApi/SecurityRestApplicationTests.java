@@ -1,4 +1,4 @@
-package com.djamware.SecurityRest;
+package com.dat.SecurityRestApi;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

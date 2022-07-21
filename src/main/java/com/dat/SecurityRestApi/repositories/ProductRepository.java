@@ -1,8 +1,8 @@
-package com.djamware.SecurityRest.repositories;
+package com.dat.SecurityRestApi.repositories;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.djamware.SecurityRest.models.Product;
+import com.dat.SecurityRestApi.models.Product;
 
 public interface ProductRepository extends CrudRepository<Product, String> {
 	

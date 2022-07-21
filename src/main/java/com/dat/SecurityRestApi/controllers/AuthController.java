@@ -1,10 +1,14 @@
-package com.djamware.SecurityRest.controllers;
+package com.dat.SecurityRestApi.controllers;
 
 import static org.springframework.http.ResponseEntity.ok;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import com.dat.SecurityRestApi.configs.JwtTokenProvider;
+import com.dat.SecurityRestApi.models.User;
+import com.dat.SecurityRestApi.repositories.UserRepository;
+import com.dat.SecurityRestApi.services.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,11 +19,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.djamware.SecurityRest.configs.JwtTokenProvider;
-import com.djamware.SecurityRest.models.User;
-import com.djamware.SecurityRest.repositories.UserRepository;
-import com.djamware.SecurityRest.services.CustomUserDetailsService;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -37,7 +36,7 @@ public class AuthController {
 	@Autowired
 	private CustomUserDetailsService userService;
 
-	@SuppressWarnings("rawtypes")
+
 	@PostMapping("/login")
 	public ResponseEntity login(@RequestBody AuthBody data) {
 		try {
@@ -53,7 +52,7 @@ public class AuthController {
 		}
 	}
 
-	@SuppressWarnings("rawtypes")
+
 	@PostMapping("/register")
 	public ResponseEntity register(@RequestBody User user) {
 		User userExists = userService.findUserByEmail(user.getEmail());

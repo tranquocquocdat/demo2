@@ -1,4 +1,4 @@
-package com.djamware.SecurityRest.configs;
+package com.dat.SecurityRestApi.configs;
 
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

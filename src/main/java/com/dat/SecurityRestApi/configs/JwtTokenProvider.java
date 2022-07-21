@@ -1,4 +1,4 @@
-package com.djamware.SecurityRest.configs;
+package com.dat.SecurityRestApi.configs;
 
 import java.util.Base64;
 import java.util.Date;
@@ -7,15 +7,14 @@ import java.util.Set;
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
+import com.dat.SecurityRestApi.models.Role;
+import com.dat.SecurityRestApi.services.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
-import com.djamware.SecurityRest.models.Role;
-import com.djamware.SecurityRest.services.CustomUserDetailsService;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
